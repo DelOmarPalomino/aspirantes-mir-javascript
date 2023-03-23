@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Palindromo</title>
+</head>
+
+<body>
+    <label for="texto">Escribe algo:</label>
+    <input type="text" id="texto">
+    <button class="btn">Validar</button>
+    <p id="resultado"></p>
+
+    <script>
+        const input = document.querySelector('#texto');
+        const boton = document.querySelector('.btn');
+        const resultado = document.querySelector('#resultado');
+
+        boton.addEventListener('click', function () {
+            const texto = input.value.trim().toLowerCase();
+            const caracteres = texto.split('');
+            const caracteresInvertidos = caracteres.reverse();
+            const textoInvertido = caracteresInvertidos.join('');
+            if (texto === textoInvertido) {
+                resultado.textContent = 'Es palíndromo';
+            } else {
+                resultado.textContent = 'No es palíndromo';
+            }
+        });
+    </script>
+</body>
+
+</html>
